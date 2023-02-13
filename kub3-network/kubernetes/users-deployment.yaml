@@ -14,18 +14,12 @@ spec:
     spec:
       containers:
         - name: users
-          image: manyfacedgod/kub-demo-user
+          image: manyfacedgod/kub-demo-user:latest
           resources:
             limits:
               memory: "128Mi"
               cpu: "200m"
           env:
             - name: AUTH_ADDRESS
-              value: localhost:801
-        - name: auth
-          image: manyfacedgod/kub-demo-auth
-          resources:
-            limits:
-              memory: "128Mi"
-              cpu: "200m"
-
+              # value: "10.105.129.220"
+              value: "auth-service.default"
